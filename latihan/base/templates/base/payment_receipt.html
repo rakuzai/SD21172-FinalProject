@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Struk Pembayaran</h1>
+<table>
+  <tr>
+    <th>Makanan</th>
+    <td>{{ payment.order.food.name }}</td>
+  </tr>
+  <tr>
+    <th>Jumlah</th>
+    <td>{{ payment.order.quantity }}</td>
+  </tr>
+  <tr>
+    <th>Total Harga</th>
+    <td>{{ payment.order.total_price }}</td>
+  </tr>
+  <tr>
+    <th>Jumlah Pembayaran</th>
+    <td>{{ payment.amount }}</td>
+  </tr>
+  {% if payment.amount > payment.order.total_price %}
+  {% load mathfilters %}
+  <tr>
+    <th>Kembalian</th>
+    <td>{{ payment.amount|sub:payment.order.total_price }}</td>
+  </tr>
+  {% endif %}
+
+
+  {% if is_payment_less %}
+    <p>Pembayaran anda kurang!</p>
+  {% else %}
+    <p>Pembayaran anda berhasil!</p>
+  {% endif %}
+  
+</table>
+{% endblock %}

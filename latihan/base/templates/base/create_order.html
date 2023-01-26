@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block content %}
+        <h1>Form Pesanan</h1>
+        <form method="post">
+        {% csrf_token %}
+        <label for="food">Pilih Makanan:</label>
+        <select name="food" id="food">
+        {% for f in food_list %}
+        <option value="{{ f.id }}">{{ f.name }} - {{ f.price }}</option>
+        {% endfor %}
+        </select>
+        <br>
+        <label for="quantity">Jumlah Pesanan:</label>
+        <input type="number" name="quantity" id="quantity">
+        <br>
+        <input type="submit" value="Submit">
+        </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+        <h3>List Menu:</h3>
+        {% for food in foods %}
+        <div>
+                <h2>{{ food.name }}</h2>
+                <p>Price: {{ food.price }}</p>
+                <p>Description: {{ food.description }}</p>
+        </div>
+        {% endfor %}
+{% endblock content %}

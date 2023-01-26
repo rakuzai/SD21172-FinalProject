@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Form Pembayaran</h1>
+<form method="post">
+  {% csrf_token %}
+  <label for="total_price">Total Harga:</label>
+  <input type="text" name="total_price" id="total_price" value="{{ order.total_price }}" disabled>
+  <br>
+  <label for="amount">Jumlah Pembayaran:</label>
+  <input type="number" name="amount" id="amount">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}

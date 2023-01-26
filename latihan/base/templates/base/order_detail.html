@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+    <h1>Detail Pesanan</h1>
+    <table>
+    <tr>
+        <th>Makanan</th>
+        <td>{{ order.food.name }}</td>
+        </tr>
+        <tr>
+        <th>Jumlah</th>
+        <td>{{ order.quantity }}</td>
+        </tr>
+        <tr>
+        <th>Total Harga</th>
+        <td>{{ order.total_price }}</td>
+        </tr>
+        <tr>
+        <th>Tanggal Pesan</th>
+        <td>{{ order.date }}</td>
+        </tr>
+        </table>
+        <h3><a href="{% url 'make_payment' order.id %}">Lakukan Pembayaran!</a></h3>
+{% endblock %}
