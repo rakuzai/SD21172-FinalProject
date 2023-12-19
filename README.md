@@ -1,5 +1,7 @@
 # django-tugas-besar
 
+tugas besar praktikum algoritma pemrograman
+
 setup and installation
 1. buat venv (conda/pip)
 2. aktifkan venv
